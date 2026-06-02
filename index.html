@@ -1,245 +1,280 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio & Biodata Mahasiswa</title>
-    <style>
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio & Biodata Mahasiswa</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        /* Header / Hero Section */
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-        /* Main Content Layout */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-        }
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
 
-        @media (max-width: 768px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
 
-        /* Cards Style */
-        .card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
-        }
+        /* Cards Style */
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
 
-        .card h2 {
-            color: #1e3c72;
-            border-bottom: 2px solid #2a5298;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
+        .card h2 {
+            color: #1e3c72;
+            border-bottom: 2px solid #2a5298;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
 
-        /* Profile Sidebar */
-        .profile-side {
-            text-align: center;
-        }
+        /* Profile Sidebar */
+        .profile-side {
+            text-align: center;
+        }
 
-        }
+        .profile-side img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #2a5298;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-        /* Biodata Table */
-        .bio-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
+        .profile-side h3 {
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
 
-        .bio-table td {
-            padding: 10px 5px;
-            vertical-align: top;
-        }
+        /* Perbaikan & Perapian Biodata Table */
+        .bio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
 
-        .bio-table td.label {
-            font-weight: bold;
-            color: #555;
-            width: 35%;
-        }
+        .bio-table td {
+            padding: 8px 2px;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
 
-        /* Skills Tags */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
+        /* Kolom Kiri (Label) */
+        .bio-table td.label {
+            font-weight: bold;
+            color: #444;
+            width: 25%;
+            text-align: left;
+        }
 
-        .skill-tag {
-            background: #eef2f7;
-            color: #2a5298;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #d0dbe5;
-        }
+        /* Kolom Tengah (Tanda Titik Dua) */
+        .bio-table td.colon {
+            width: 5%;
+            text-align: center;
+            color: #444;
+        }
 
-        /* Project & Experience List */
-        .item-list {
-            margin-bottom: 15px;
-        }
+        /* Kolom Kanan (Isi Data) */
+        .bio-table td.value {
+            width: 70%;
+            text-align: left;
+            color: #555;
+            word-break: break-all; /* Pengaman agar email tidak merusak layout di layar HP */
+        }
 
-        .item-list h3 {
-            font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 3px;
-        }
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-        .item-list .meta {
-            font-size: 0.85rem;
-            color: #777;
-            margin-bottom: 5px;
-            font-style: italic;
-        }
+        .skill-tag {
+            background: #eef2f7;
+            color: #2a5298;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #d0dbe5;
+        }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: #777;
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-    </style>
+        /* Project & Experience List */
+        .item-list {
+            margin-bottom: 15px;
+        }
+
+        .item-list h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .item-list .meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <header>
-            <h1>Raudya Nur Faiza</h1>
-            <p>Mahasiswa Sistem Komputer | Tech Enthusiast</p>
-        </header>
+    <div class="container">
+        
+        <header>
+            <h1>Raudya Nur Faiza</h1>
+            <p>Mahasiswa Sistem Komputer | Tech Enthusiast</p>
+        </header>
 
-        <div class="main-layout">
-            
-            <div class="sidebar">
-                
-                <div class="card profile-side">
-                    <img src="images.png" alt="Foto Profil">
-                    <h3>Biodata Diri</h3>
-                    
-                    <table class="bio-table">
-                        <tr>
-                            <td class="label">NIM</td>
-                            <td>: 202323006</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Jurusan</td>
-                            <td>: Sistem Komputer</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Kampus</td>
-                            <td>: Universitas Surakarta</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Email</td>
-                            <td>: raudyanurfaiza6@gmail.com </td>
-                        </tr>
-                    </table>
-                </div>
+        <div class="main-layout">
+            
+            <div class="sidebar">
+                
+                <div class="card profile-side">
+                    <img src="images.png" alt="Foto Profil">
+                    <h3>Biodata Diri</h3>
+                    
+                    <!-- Struktur tabel baru yang jauh lebih rapi -->
+                    <table class="bio-table">
+                        <tr>
+                            <td class="label">NIM</td>
+                            <td class="colon">:</td>
+                            <td class="value">202323006</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Jurusan</td>
+                            <td class="colon">:</td>
+                            <td class="value">Sistem Komputer</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Kampus</td>
+                            <td class="colon">:</td>
+                            <td class="value">Universitas Surakarta</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email</td>
+                            <td class="colon">:</td>
+                            <td class="value">raudyanurfaiza6@gmail.com</td>
+                        </tr>
+                    </table>
+                </div>
 
-                <div class="card">
-                    <h2>Keahlian</h2>
-                    <div class="skills-container">
-                        <span class="skill-tag">HTML & CSS</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Internet of Things (IoT)</span>
-                        <span class="skill-tag">Microcontroller</span>
-                        <span class="skill-tag">UI/UX (Canva/Figma)</span>
-                    </div>
-                </div>
+                <div class="card">
+                    <h2>Keahlian</h2>
+                    <div class="skills-container">
+                        <span class="skill-tag">HTML & CSS</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Internet of Things (IoT)</span>
+                        <span class="skill-tag">Microcontroller</span>
+                        <span class="skill-tag">UI/UX (Canva/Figma)</span>
+                    </div>
+                </div>
 
-            </div>
+            </div>
 
-            <div class="content">
-                
-                <div class="card">
-                    <h2>Tentang Saya</h2>
-                    <p>Saya adalah seorang mahasiswa aktif yang berfokus pada pengembangan sistem komputer, integrasi perangkat keras dan lunak, serta desain antarmuka yang fungsional. Tertarik untuk terus mengeksplorasi teknologi baru, khususnya di bidang IoT dan pengembangan web/aplikasi.</p>
-                </div>
+            <div class="content">
+                
+                <div class="card">
+                    <h2>Tentang Saya</h2>
+                    <p>Saya adalah seorang mahasiswa aktif yang berfokus pada pengembangan sistem komputer, integrasi perangkat keras dan lunak, serta desain antarmuka yang fungsional. Tertarik untuk terus mengeksplorasi teknologi baru, khususnya di bidang IoT dan pengembangan web/aplikasi.</p>
+                </div>
 
-                <div class="card">
-                    <h2>Riwayat Pendidikan</h2>
-                    <div class="item-list">
-                        <h3>Universitas Surakarta</h3>
-                        <p class="meta">Sarjana (S1) Sistem Komputer • 2023 - Sekarang</p>
-                        <p>Aktif dalam kegiatan akademik, fokus pada pemrograman, arsitektur komputer, dan proyek berbasis IoT.</p>
-                    </div>
-                </div>
+                <div class="card">
+                    <h2>Riwayat Pendidikan</h2>
+                    <div class="item-list">
+                        <h3>Universitas Surakarta</h3>
+                        <p class="meta">Sarjana (S1) Sistem Komputer • 2023 - Sekarang</p>
+                        <p>Aktif dalam kegiatan akademik, fokus pada pemrograman, arsitektur komputer, dan proyek berbasis IoT.</p>
+                    </div>
+                </div>
 
-                <div class="card">
-                    <h2>Pengalaman & Proyek</h2>
-                    
-                    <div class="item-list">
-                        <h3>Pengembangan Sistem Monitoring berbasis IoT</h3>
-                        <p class="meta">Proyek Kuliah / Mandiri • 2025</p>
-                        <p>Membangun prototype sistem deteksi lingkungan menggunakan mikrokontroler (ESP32/Arduino) dan integrasi sensor untuk membaca kualitas udara serta suhu secara real-time.</p>
-                    </div>
+                <div class="card">
+                    <h2>Pengalaman & Proyek</h2>
+                    
+                    <div class="item-list">
+                        <h3>Pengembangan Sistem Monitoring berbasis IoT</h3>
+                        <p class="meta">Proyek Kuliah / Mandiri • 2025</p>
+                        <p>Membangun prototype sistem deteksi lingkungan menggunakan mikrokontroler (ESP32/Arduino) dan integrasi sensor untuk membaca kualitas udara serta suhu secara real-time.</p>
+                    </div>
 
-                    <div class="item-list">
-                        <h3>Redesain Visual & Informasi Media Digital</h3>
-                        <p class="meta">Pengalaman Magang / Kerja Praktik • 2026</p>
-                        <p>Berpartisipasi dalam memperbarui tata letak informasi pada platform web dan aset visual instansi agar lebih user-friendly dan informatif menggunakan alat desain modern.</p>
-                    </div>
-                </div>
+                    <div class="item-list">
+                        <h3>Redesain Visual & Informasi Media Digital</h3>
+                        <p class="meta">Pengalaman Magang / Kerja Praktik • 2026</p>
+                        <p>Berpartisipasi dalam memperbarui tata letak informasi pada platform web dan aset visual instansi agar lebih user-friendly dan informatif menggunakan alat desain modern.</p>
+                    </div>
+                </div>
 
-            </div>
+            </div>
 
-        </div>
+        </div>
 
-        <footer>
-            <p>&copy; 2026 Raudya Nur Faiza.</p>
-        </footer>
+        <footer>
+            <p>&copy; 2026 Raudya Nur Faiza.</p>
+        </footer>
 
-    </div>
+    </div>
 
 </body>
 </html>
-perbaiki pada biodata tabel rapikan
